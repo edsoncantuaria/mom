@@ -12,6 +12,10 @@
 | Workflow recall/distill MOM | [mom-context-workflow.md](./mom-context-workflow.md) | active | docs dev |
 | Sprint doc architecture jun/2026 | [doc-sprint-architecture-2026-06.md](./doc-sprint-architecture-2026-06.md) | active | docs |
 | Handshake sync entre PCs | [sync-handshake.md](./sync-handshake.md) | active | dev sync |
+| Munição em ataque à distância | [combate-municao.md](./combate-municao.md) | active | combate memoria |
+| Gemini single-attempt (sem retry) | [ia-gemini-single-attempt.md](./ia-gemini-single-attempt.md) | active | ia gemini penai |
+| Death saves + game over PENAI | [combate-morte-death-saves.md](./combate-morte-death-saves.md) | active | combate frontend penai |
+| BYOK no árbitro actionSense | [ia-byok-action-sense.md](./ia-byok-action-sense.md) | active | ia gemini auth penai |
 
 **Superseded:** mover linha para seção abaixo com data.
 

@@ -1,30 +1,33 @@
-# Dev local — hot reload sem rebuild Docker
+# Dev local — PENAI (Postgres + Temporal)
 
-Status: active  
-Atualizado: 2026-05-29  
-Doc: ECOSSISTEMA (dev) · `npm run dev:local`
+Status: active
+Atualizado: 2026-06-06
+Doc: `scripts/dev-local.sh` · `docker-compose.penai.yml`
 
 ## Por quê
 
-`compose:app` / profile `full` roda **produção** (`next build` + `node dist`) — cada fix exige `--build`.
+Stack canônico é Fastify/Postgres/Temporal — não MySQL/BullMQ legado.
 
 ## O quê
 
-- **Infra:** `npm run dev:local` → Docker só MySQL, Redis, SRD, MinIO, Piper, Qdrant
-- **Backend:** `npm run dev:backend` → `tsx watch` porta 8071 (+ worker BullMQ no mesmo processo)
-- **Frontend:** `npm run dev` → `next dev` porta 9002, `NEXT_DIST_DIR=.next-dev` (evita `.next` root-owned do Docker)
-- Env: `backend/.env` `DB_HOST=localhost`; raiz `.env.local` com `NEXT_PUBLIC_API_URL`
+- **Infra:** `npm run dev:local` → Postgres:5433, Redis:6381, Temporal, Qdrant, SRD
+- **API:** `cd backend && npm run dev:penai` → `:8071`
+- **Worker:** `cd backend && npm run worker:temporal` (obrigatório para narração)
+- **Frontend:** `npm run dev` → `:9002` com `NEXT_PUBLIC_PENAI_UI=true`
+- Tudo-Docker hot reload: `npm run dev:all`
 
 ## Armadilhas
 
-- Não usar `docker:up` / `compose:app` no dia a dia de código
-- `.next/` criada como root pelo Docker → usar `.next-dev` ou `sudo rm -rf .next`
-- `AI_ENGINE=gemini` no `backend/.env` (não `oss` sem OpenRouter)
+- Sem worker Temporal → narração não completa (a menos que `TEMPORAL_DISABLED=true`)
+- `.next/` root-owned do Docker → `NEXT_DIST_DIR=.next-dev`
+- `GEMINI_MAX_ATTEMPTS=1` — 429 falha o turno; não há retry automático
 
 ## Comandos
 
 ```bash
 npm run dev:local
-npm run dev:backend   # terminal 2
-npm run dev           # terminal 3
+npm run penai:import:foundry-bundle --prefix backend
+cd backend && npm run dev:penai
+cd backend && npm run worker:temporal
+npm run dev
 ```
