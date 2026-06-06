@@ -43,3 +43,5 @@ make contexto-status
 ```
 
 Ordem do agente (`scripts/context-sync-commit-msg.mjs`): **Cursor Agent** (se logado) → **Gemini** (`GEMINI_API_KEY`) → heurística local.
+
+**Handshake:** cada `make sair-pc` grava palavra em `mom/context/sync-handshake.md`. No outro PC, `make chegar-pc` imprime a palavra — confirme com o agente.

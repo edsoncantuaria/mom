@@ -11,6 +11,7 @@
 | Worker → API WS relay | [ws-user-relay.md](./ws-user-relay.md) | superseded | ws fila |
 | Workflow recall/distill MOM | [mom-context-workflow.md](./mom-context-workflow.md) | active | docs dev |
 | Sprint doc architecture jun/2026 | [doc-sprint-architecture-2026-06.md](./doc-sprint-architecture-2026-06.md) | active | docs |
+| Handshake sync entre PCs | [sync-handshake.md](./sync-handshake.md) | active | dev sync |
 
 **Superseded:** mover linha para seção abaixo com data.
 
