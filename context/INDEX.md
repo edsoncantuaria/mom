@@ -16,6 +16,8 @@
 | Gemini single-attempt (sem retry) | [ia-gemini-single-attempt.md](./ia-gemini-single-attempt.md) | active | ia gemini penai |
 | Death saves + game over PENAI | [combate-morte-death-saves.md](./combate-morte-death-saves.md) | active | combate frontend penai |
 | BYOK no árbitro actionSense | [ia-byok-action-sense.md](./ia-byok-action-sense.md) | active | ia gemini auth penai |
+| Corte PENAI-only (MySQL/BullMQ removidos) | [penai-only-cleanup.md](./penai-only-cleanup.md) | active | dev penai docs docker |
+| Melhorias PENAI 1–6 (triggers, coerência, F.1) | [penai-improvements-1-6.md](./penai-improvements-1-6.md) | active | penai frontend docs |
 
 **Superseded:** mover linha para seção abaixo com data.
 
@@ -24,4 +26,4 @@
 | Título | Arquivo | Data | Motivo |
 |--------|---------|------|--------|
 | Mestre adjudica + fila Gemini | [ia-gemini-adjudication.md](./ia-gemini-adjudication.md) | 2026-06-06 | ADR 0001 — actionSense × motor; paths `ai-gemini/` removidos |
-| Worker WS relay legado | [ws-user-relay.md](./ws-user-relay.md) | 2026-06-06 | PENAI usa `wsPubSub.ts` + canal `penai:ws:user` |
+| Worker WS relay legado | [ws-user-relay.md](./ws-user-relay.md) | 2026-06-06 | PENAI usa `wsPubSub.ts` + canal `penai:ws:user`; código `websocket/` removido |
