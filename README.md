@@ -32,3 +32,14 @@ Skill: `dndai-mom-context`
 ## MOM CLI (opcional)
 
 Vault local em `mom/.vault/` — não commitar. Distill **sempre** também em `mom/context/*.md` para o time.
+
+## Sync entre PCs
+
+```bash
+make sair-pc                        # agente gera commit + push
+make sair-pc MSG="distill: combate"  # mensagem manual
+make chegar-pc
+make contexto-status
+```
+
+Ordem do agente (`scripts/context-sync-commit-msg.mjs`): **Cursor Agent** (se logado) → **Gemini** (`GEMINI_API_KEY`) → heurística local.
